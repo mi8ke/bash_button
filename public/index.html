@@ -7,11 +7,15 @@
 </head>
 <body>
   <h1>Execute Shell Script</h1>
-  <button onclick="executeScript()">Execute Script</button>
+  <button onclick="executeScript(1)">Execute Script 1</button>
+  <button onclick="executeScript(2)">Execute Script 2</button>
+  <button onclick="executeScript(3)">Execute Script 3</button>
+  <button onclick="executeScript(4)">Execute Script 4</button>
+  <button onclick="executeScript(5)">Execute Script 5</button>
 
   <script>
-    function executeScript() {
-      fetch('/execute-script')
+    function executeScript(scriptNumber) {
+      fetch(`/execute-script?script=${scriptNumber}`)
         .then(response => response.text())
         .then(result => {
           console.log(result);
